@@ -97,7 +97,7 @@ int				get_next_line(int const fd, char **line)
 	ft_bzero(str, BUFF_SIZE + 1);
 	if (fd < 0 || !line)
 		return (-1);
-	if ((status = check_buffer(&buffer, line)))
+	if ((status = check_buffer(&buffer, line)) != 0)
 		return (status);
 	while ((read_bytes = read(fd, str, BUFF_SIZE)) > 0)
 	{
